@@ -38,14 +38,7 @@ jobs:
         #cd /opt/rt-n56u/toolchain-mipsel
         #sh dl_toolchain.sh
         mkdir -p /opt/images/
-     - name: Prepare
-        run: |
-          sudo apt update
-          sudo apt install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd \
-            fakeroot kmod cpio git python3-docutils gettext automake autopoint \
-            texinfo build-essential help2man pkg-config zlib1g-dev libgmp3-dev \
-            libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget libc-dev-bin
-      - name: Build
+    - name: Build
         run: |
           make CT_TARGET=${{ matrix.target }}
           cd crosstool-ng/toolchain-mipsel
