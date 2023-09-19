@@ -27,21 +27,18 @@ jobs:
         DEBIAN_FRONTEND: noninteractive
       run: |
         sudo apt-get update
-        sudo apt-get -y install unzip libtool-bin ccache curl cmake gperf gawk flex bison nano xxd \
-        fakeroot kmod cpio bc zip git python3-docutils gettext automake autopoint \
-        texinfo build-essential help2man pkg-config zlib1g-dev libgmp3-dev \
-        libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget libc-dev-bin
+        sudo apt-get -y install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd fakeroot \
+        cpio git python-docutils gettext automake autopoint texinfo build-essential help2man \
+        pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget
     - name: Clone source code
       run: |
-        git clone --depth=1 https://github.com/tsl0922/padavan.git /opt/rt-n56u
-       
+        git clone --depth=1 https://github.com/padavanonly/padavan-4.4.git /opt/rt-n56u
         #git clone --depth=1 https://github.com/padavanonly/padavan-4.4.git /opt/rt-n56u
         #git clone --depth=1 https://github.com/hwlon/Padavan.git /opt/rt-n56u
-        #cd /opt/rt-n56u/toolchain-mipsel
-        #sh dl_toolchain.sh
+        cd /opt/rt-n56u/toolchain-mipsel
+        sh dl_toolchain.sh
         mkdir -p /opt/images/
-        
-     - name: Build Firmware
+    - name: Build Firmware
       env:
         #  CR660x  K2P_nano  K2P
         TNAME: CR660x
