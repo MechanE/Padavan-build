@@ -35,7 +35,7 @@ jobs:
       run: |
         #git clone --depth=1 https://github.com/padavanonly/padavan-4.4.git /opt/rt-n56u
         git clone --depth=1 https://github.com/tsl0922/padavan.git /opt/rt-n56u
-        cd /opt/rt-n56u/toolchain
+        cd /opt/rt-n56u/toolchain/crosstool-ng
         #git clone --depth=1 https://github.com/hwlon/Padavan.git /opt/rt-n56u
         #cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
