@@ -40,7 +40,7 @@ jobs:
     - name: Build Firmware
       env:
         #  CR660x  K2P_nano  K2P
-        TNAME: K2P_nano
+        TNAME: CR660x
       run: |
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
