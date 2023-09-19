@@ -40,7 +40,7 @@ jobs:
     - name: Build Firmware
       env:
         #  CR660x  K2P_nano  K2P
-        TNAME: K2P_nano
+        TNAME: CR660x
       run: |
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
@@ -53,7 +53,7 @@ jobs:
         sed -i 's/"vpnsrv.asp", "vpncli.asp"/"", ""/g' /opt/rt-n56u/trunk/user/www/n56u_ribbon_fixed/state.js
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=n/g' .config
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_VLMCSD=y/CONFIG_FIRMWARE_INCLUDE_VLMCSD=n/g' .config
-        #wget -O /opt/rt-n56u/trunk/user/www/n56u_ribbon_fixed/bootstrap/img/asus_logo.png https://github.com/hwlon/packages/blob/main/png/asus_logo.png
+        #wget -O /opt/rt-n56u/trunk/user/www/n56u_ribbon_fixed/bootstrap/img/asus_logo.png https://github.com/hwlon/packages_HL/blob/main/png/asus_logo.png
         ################################################################################################
         #因不同型号配置功能不一样，所以先把配置项删除，如果你自己要添加其他的，也要写上删除这一条，切记！！！
         ################################################################################################
